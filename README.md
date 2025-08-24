@@ -40,3 +40,40 @@ As mentioned earlier, the system had two main components:
 ## 📚 Challenges and What I Learned
 
 This project taught me a lot about multi-threading and scraping data.
+
+## Deployment Instructions
+### Crawler Setup
+- Create a Reddit API app → obtain Client ID, Client Secret, and User Agent.
+- Add credentials to a `.env` file in the project root:
+  ```bash
+  REDDIT_CLIENT_ID=your_client_id_here  
+  REDDIT_CLIENT_SECRET=your_client_secret_here  
+  REDDIT_USER_AGENT=your_user_agent_here  
+  SUBREDDIT_NAME=your_target_subreddit  
+  ```
+- Install dependencies:
+
+  ```bash
+  pip install praw requests beautifulsoup4 python-dotenv
+  ```
+- Run the crawler:
+  ```bash
+  python scraper.py
+  ```
+
+### File Outputs
+
+- `*.json` → segmented Reddit post dumps (~10MB each).
+- `*.csv` → log files of post IDs and creation dates.
+
+## Exmaples:
+
+### Terminal Example:
+<div align="center">
+  <img src=terminal-ex.png alt="terminal example">
+</div>
+
+### `.json` Example:
+<div align="center">
+  <img src=json-ex.png alt="json example">
+</div>
